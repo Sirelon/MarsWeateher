@@ -9,7 +9,7 @@ import retrofit2.http.GET
  */
 interface WeatherApi {
 
-    @GET("/latest/")
-    fun getLatestWeather(): Observable<LatestWeather>ß
+    @GET("latest/")
+    fun getLatestWeather(): Observable<LatestWeather>
 
 }

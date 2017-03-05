@@ -2,12 +2,17 @@ package com.sirelon.marsweather
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val dataManager = DataManager(this.applicationContext)
+        dataManager.getLatestWeather()
+                .subscribe { Log.d("Sirelon", "WEATHER DATA " + it) }
     }
 
 //    private fun initHeaderView() {
